@@ -1,13 +1,31 @@
+import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+import { Jobs } from './components/home';
+import { JOB_API_URL } from './helpers/urls';
+import Menu from './components/menu';
+import Routes from './routes';
+
+const client = new ApolloClient({
+  uri: JOB_API_URL,
+  cache: new InMemoryCache()
+});
+
+ReactDOM.render(<React.StrictMode>
+
+  <ApolloProvider client={client}>
+    <BrowserRouter>
+      <Menu />
+      <Routes />
+    </BrowserRouter>
+  </ApolloProvider>
+
+
+</React.StrictMode>,
   document.getElementById('root')
 );
 
