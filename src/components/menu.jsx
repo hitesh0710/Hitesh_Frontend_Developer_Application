@@ -6,11 +6,13 @@ class Menu extends Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-dark bg-primary sticky-top">
-          <Link className="navbar-brand" to="/">
-            Home
+        <>
+          <nav className="navbar navbar-dark bg-primary sticky-top">
+            <Link className="navbar-brand nav-link" to="/">
+              Home
           </Link>
-        </nav>
+          </nav>
+        </>
       </React.Fragment>
     );
   }

@@ -5,7 +5,6 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { Jobs } from './components/home';
 import { JOB_API_URL } from './helpers/urls';
 import Menu from './components/menu';
 import Routes from './routes';

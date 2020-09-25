@@ -1,11 +1,11 @@
 import React from "react";
 import Moment from "react-moment";
-import { useQuery, fetchMore, cursor } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
+import '../loading.css';
 
 import { GET_JOBS } from "../helpers/queries";
 import PostJob from "./postjob";
-import Menu from "./menu";
 
 function Jobs() {
   const { data, loading, error } = useQuery(GET_JOBS);

@@ -29,20 +29,25 @@ const GET_JOBS = gql`
 `;
 
 const POST_JOBS = gql`
-  mutation {
-    postJob(
-      input: {
-        title: $title
-        commitmentId: "123"
-        companyName: "XYZ"
-        locationNames: "Delhi"
-        userEmail: "xyz@gmail.com"
-        description: "Valid Job"
-        applyUrl: "google.com"
-      }
-    ) {
-      id
-    }
+mutation postJob($title:String!
+  $companyName:String!
+  $locationNames:String!
+  $userEmail:String!
+  $description:String!
+  $applyUrl:String!){
+  postJob(
+  input: {
+  title: $title
+  commitmentId: "cjtu8esth000z0824x00wtp1i"
+  companyName: $companyName
+  locationNames: $locationNames
+  userEmail: $userEmail
+  description: $description
+  applyUrl: $applyUrl
+  }
+  ) {
+  id
+  }
   }
 `;
 
